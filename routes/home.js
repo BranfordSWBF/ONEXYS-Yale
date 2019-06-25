@@ -14,8 +14,7 @@ router.use("/", (req, res, next) => {
     //courseID = 38082;
   //}
 
-  //var is_physics = Boolean(courseID == 38083);
-  var is_physics = false;
+  var is_physics = Boolean(courseID == 48039);
 
   if (req.session.admin) {
     if (req.query.masquerade) {

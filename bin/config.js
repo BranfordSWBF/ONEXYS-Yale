@@ -20,16 +20,15 @@ config.local_mongo_database = 'mongodb://localhost:27017/oneyxs_dev'
 config.disableLeaderboard = process.env.DISABLE_LEADERBOARD.toLowerCase() == 'false' ? true : false || false;
 
 //configure MongoDB urls here - course ID to mongoDB URL
-config.mongoURL = 'mongodb://'+config.mongo_username+':'+config.mongo_password+'@conexcluster-shard-00-00-bgeoe.mongodb.net:27017,conexcluster-shard-00-01-bgeoe.mongodb.net:27017,conexcluster-shard-00-02-bgeoe.mongodb.net:27017/test?ssl=true&replicaSet=ConexCluster-shard-0&authSource=admin&retryWrites=true';
+config.mongoURL = 'mongodb://'+config.mongo_username+':'+config.mongo_password+'@onexys-yale-shard-00-00-kb9ww.mongodb.net:27017,onexys-yale-shard-00-01-kb9ww.mongodb.net:27017,onexys-yale-shard-00-02-kb9ww.mongodb.net:27017/test?ssl=true&replicaSet=ONEXYS-YALE-shard-0&authSource=admin&retryWrites=true&w=majority';
 
 //add to list if we create new courses
 //format is courseID: databaseName
 config.mongoDBs = {
-  '2517': 'blue',
-  '3528': 'orange',
-  '3529': 'white',
-  '3559': 'conexDemo',
-  '48080': 'smith',
+  '48036': 'onexys_blue',
+  '48037': 'onexys_gray',
+  '48039': 'onexys_physics',
+  '48038': 'onexys_white'
 };
 
 //the name of the mongo db to connect to
