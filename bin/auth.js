@@ -123,7 +123,8 @@ var checkUser = function(req, res, next) {
           console.log(req);
           //console.log(provider.valid_request);
           console.log(provider);
-          res.send(req);
+          //res.send(req);
+          next();
         } else {
           //check if auth token already exists in Redis
           console.log('Redis Key (Check User)');
