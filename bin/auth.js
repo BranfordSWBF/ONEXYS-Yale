@@ -10,10 +10,10 @@ var redis = require("redis"),
 
 var store = new RedisNonceStore(config.client_id, redis_client);
 
-//if (!provider) {
+if (!provider) {
   var provider = new lti.Provider(config.client_id, config.client_secret);
   console.log('Generating new provider...')
-//}
+}
 
 // Set the configuration settings
 let credentials = {
@@ -120,9 +120,10 @@ var checkUser = function(req, res, next) {
       provider.valid_request(req, function(err, is_valid) {
         if (!is_valid) {
           console.log('Unverified User:');
-          console.log(provider.valid_request);
+          console.log(req);
+          //console.log(provider.valid_request);
           console.log(provider);
-          res.send('Unverified User');
+          res.send(req);
         } else {
           //check if auth token already exists in Redis
           console.log('Redis Key (Check User)');
